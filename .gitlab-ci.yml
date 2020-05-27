@@ -1,0 +1,8 @@
+build-package:
+  script:
+    - makepkg -scr --noconfirm
+    - cp ./*.pkg.tar.* /opt/community/
+  artifacts:
+    paths:
+    - ./*.pkg.tar.*
+    expire_in: 1 week

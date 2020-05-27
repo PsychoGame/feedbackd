@@ -2,7 +2,7 @@
 # Contributor: Sam Whited <sam@samwhited.com>
 
 pkgname=feedbackd
-pkgver=0.0.0+git20200420
+pkgver=0.0.0+git20200527
 pkgrel=1
 pkgdesc="A daemon to provide haptic feedback on events"
 url="https://source.puri.sm/Librem5/feedbackd"
