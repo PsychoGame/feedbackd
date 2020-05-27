@@ -20,7 +20,7 @@ provides=(libfeedback
           purism-feedbackd
           purism-libfeedback)
 source=("https://source.puri.sm/Librem5/${pkgname}/-/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz")
-sha256sums=('4c50d72654b6716fd12843ad4e9460a4020bbd1ced958c211c06b0f48bebe49f')
+sha256sums=('51d244041e4df61d819ec40ea1a0c91fc8bc7638a4bc995dc96455371ceb328d')
 
 build() {
 	rm -rf build
