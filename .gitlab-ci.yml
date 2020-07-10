@@ -1,7 +1,8 @@
 build-package:
+  tags:
+    - strit
   script:
-    - makepkg -scr --noconfirm
-    - cp ./*.pkg.tar.* /opt/community/
+    - sudo pacman -Syy && makepkg -scr --noconfirm
   artifacts:
     paths:
     - ./*.pkg.tar.*
