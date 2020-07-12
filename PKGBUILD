@@ -1,9 +1,10 @@
 # Maintainer: Dan Johansen <strit@manjaro.org>
+# Maintainer: Philip Müller <philm@manjaro.org>
 # Contributor: Sam Whited <sam@samwhited.com>
 
 pkgname=feedbackd
 pkgver=0.0.0+git20200707
-pkgrel=1
+pkgrel=2
 pkgdesc="A daemon to provide haptic feedback on events"
 url="https://source.puri.sm/Librem5/feedbackd"
 license=(GPL3 LGPL3)
@@ -30,4 +31,6 @@ build() {
 
 package() {
 	DESTDIR="${pkgdir}" ninja -C build install
+	install -Dm644 "$srcdir"/${pkgname}-v${pkgver}/debian/feedbackd.udev \
+		"$pkgdir"/usr/lib/udev/rules.d/90-feedbackd.rules
 }
