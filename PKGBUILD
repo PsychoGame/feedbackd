@@ -14,13 +14,7 @@ depends=('gobject-introspection' 'gsound' 'json-glib' 'libgudev')
 makedepends=('meson' 'vala')
 _fbdthemes_commit="1602d415aed30b1a67c0ff270551230725b8ef92" # branch/master
 source=(https://source.puri.sm/Librem5/${pkgname}/-/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz
-	https://source.puri.sm/Librem5/feedbackd-device-themes/-/archive/1602d415aed30b1a67c0ff270551230725b8ef92/feedbackd-device-themes-${_fbdthemes_commit}.tar.gz
-	44.patch)
-
-prepare() {
-	cd ${pkgname}-v${pkgver}
-	patch -p1 -N < ../44.patch
-}
+	https://source.puri.sm/Librem5/feedbackd-device-themes/-/archive/1602d415aed30b1a67c0ff270551230725b8ef92/feedbackd-device-themes-${_fbdthemes_commit}.tar.gz)
 
 build() {
 	arch-meson ${pkgname}-v${pkgver} output
@@ -42,6 +36,5 @@ package() {
 		 -exec cp {} ${pkgdir}/usr/share/feedbackd/themes \;
 }
 
-md5sums=('c5c0d4f74164e2b7a28087da00d8af6d'
-         'd8bd3c60c3e65cad899685f3e69cb2a1'
-         'b9c79dae2a5a287f71afe02be9992388')
+sha256sums=('48db1e6e8263025d881cd00e66c2d2a82db0d1a632cfb378803f9e3337c5dd8d'
+            'afc62d540575b7cd4286935774d532611086f4556a21a03fdd37e983d6e31061')
