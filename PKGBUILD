@@ -42,6 +42,6 @@ package() {
 		 -exec cp {} ${pkgdir}/usr/share/feedbackd/themes \;
 }
 
-md5sums=('ae193bc2ac849e15ca415e51fa37e58a'
+md5sums=('c5c0d4f74164e2b7a28087da00d8af6d'
          'd8bd3c60c3e65cad899685f3e69cb2a1'
          'b9c79dae2a5a287f71afe02be9992388')
