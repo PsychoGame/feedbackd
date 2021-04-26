@@ -4,20 +4,21 @@
 # Contributor: Sam Whited <sam@samwhited.com>
 
 pkgname=feedbackd
-pkgver=0.0.0+git20210125
-pkgrel=2
+pkgver=0.0.0+git20210426
+pkgrel=1
 pkgdesc="A daemon to provide haptic (and later more) feedback on events"
 url="https://source.puri.sm/Librem5/feedbackd"
 arch=('x86_64' 'armv7h' 'aarch64')
 license=('GPL')
 depends=('gobject-introspection' 'gsound' 'json-glib' 'libgudev')
 makedepends=('meson' 'vala')
+_feedbackd_commit="678ae7a22dc2439dc6b575a5f15bb132ff63a7f0" # branch/master
 _fbdthemes_commit="1602d415aed30b1a67c0ff270551230725b8ef92" # branch/master
-source=(https://source.puri.sm/Librem5/${pkgname}/-/archive/v${pkgver}/${pkgname}-v${pkgver}.tar.gz
-	https://source.puri.sm/Librem5/feedbackd-device-themes/-/archive/1602d415aed30b1a67c0ff270551230725b8ef92/feedbackd-device-themes-${_fbdthemes_commit}.tar.gz)
+source=(https://source.puri.sm/Librem5/${pkgname}/-/archive/${_feedbackd_commit}/${pkgname}-${_feedbackd_commit}.tar.gz
+	https://source.puri.sm/Librem5/feedbackd-device-themes/-/archive/${_fbdthemes_commit}/feedbackd-device-themes-${_fbdthemes_commit}.tar.gz)
 
 build() {
-	arch-meson ${pkgname}-v${pkgver} output
+	arch-meson ${pkgname}-${_feedbackd_commit} output
 	ninja -C output
 }
 
@@ -36,5 +37,5 @@ package() {
 		 -exec cp {} ${pkgdir}/usr/share/feedbackd/themes \;
 }
 
-sha256sums=('48db1e6e8263025d881cd00e66c2d2a82db0d1a632cfb378803f9e3337c5dd8d'
+sha256sums=('b44db89d957052d6840eaadf9ec14570840a83e21c339ee9e09fd470c8ecc6bd'
             'afc62d540575b7cd4286935774d532611086f4556a21a03fdd37e983d6e31061')
