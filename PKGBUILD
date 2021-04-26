@@ -24,7 +24,7 @@ build() {
 
 package() {
 	DESTDIR="$pkgdir" ninja -C output install
-	install -Dm644 "$srcdir"/${pkgname}-v${pkgver}/debian/feedbackd.udev \
+	install -Dm644 "$srcdir"/${pkgname}-${_feedbackd_commit}/debian/feedbackd.udev \
 		"$pkgdir"/usr/lib/udev/rules.d/90-feedbackd.rules
 	sed -i 's/libexec/lib/g' "$pkgdir"/usr/lib/udev/rules.d/90-feedbackd.rules
 
