@@ -4,22 +4,21 @@
 # Contributor: Sam Whited <sam@samwhited.com>
 
 pkgname=feedbackd
-pkgver=0.0.0+git20210426
-pkgrel=2
+pkgver=0.0.0+git20210531
+pkgrel=1
 pkgdesc="A daemon to provide haptic (and later more) feedback on events"
 url="https://source.puri.sm/Librem5/feedbackd"
 arch=('x86_64' 'armv7h' 'aarch64')
 license=('GPL')
 depends=('gobject-introspection' 'gsound' 'json-glib' 'libgudev' 'systemd')
 makedepends=('meson' 'vala')
-_feedbackd_commit="48b4bb97d62fa1917a9e54852f593d3190ef188c" # branch/master
+_feedbackd_commit="b45468080eee851da500613ecedd709639b6d769" # branch/master
 _fbdthemes_commit="1602d415aed30b1a67c0ff270551230725b8ef92" # branch/master
-source=(https://source.puri.sm/Librem5/${pkgname}/-/archive/${_feedbackd_commit}/${pkgname}-${_feedbackd_commit}.tar.gz 55.patch
+source=(https://source.puri.sm/Librem5/${pkgname}/-/archive/${_feedbackd_commit}/${pkgname}-${_feedbackd_commit}.tar.gz
 	https://source.puri.sm/Librem5/feedbackd-device-themes/-/archive/${_fbdthemes_commit}/feedbackd-device-themes-${_fbdthemes_commit}.tar.gz)
 
 prepare() {
 	cd ${pkgname}-${_feedbackd_commit}
-	patch -p1 -i ../55.patch
 }	
 
 build() {
@@ -42,6 +41,5 @@ package() {
 		 -exec cp {} ${pkgdir}/usr/share/feedbackd/themes \;
 }
 
-sha256sums=('b616ca964ec374725ae3811ea30e5b18b9b9733142ad2a126fe591f809a71106'
-            'effa0b0e388b33a97790a18d2e6accc23c5657729f478063fbb4127218f8fa36'
+sha256sums=('de7f424afaacf7808e1879b418506122271e982e9a422705b1d766bf4d4523ee'
             'afc62d540575b7cd4286935774d532611086f4556a21a03fdd37e983d6e31061')
