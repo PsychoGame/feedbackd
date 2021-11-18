@@ -14,7 +14,7 @@ depends=('gobject-introspection' 'gsound' 'json-glib' 'libgudev' 'systemd')
 makedepends=('meson' 'vala')
 _feedbackd_commit="753fff3e7ae1d0bce4f58cef721e45c50c404786" # branch/master
 _fbdthemes_commit="1602d415aed30b1a67c0ff270551230725b8ef92" # branch/master
-source=(https://source.puri.sm/Librem5/${pkgname}/-/archive/${_feedbackd_commit}/${pkgname}-${_feedbackd_commit}.tar.gz
+source=(https://source.puri.sm/Librem5/${pkgname}/-/archive/${_feedbackd_commit}/${pkgname}-${_feedbackd_commit}.tar.gz 55.patch
 	https://source.puri.sm/Librem5/feedbackd-device-themes/-/archive/${_fbdthemes_commit}/feedbackd-device-themes-${_fbdthemes_commit}.tar.gz)
 
 prepare() {
@@ -42,4 +42,5 @@ package() {
 }
 
 sha256sums=('717f33f23d01f6cc772ec29b05e10d301f2e0bde27e3fdbe229903a6bd40cb71'
+            '7161fe3540752a3949a19869ad95a1698013f01caceacb34bdc52a2f2fbbefb9'
             'afc62d540575b7cd4286935774d532611086f4556a21a03fdd37e983d6e31061')
